@@ -1,13 +1,38 @@
 ---
-Attributes:
-  - 1:
-      Type: Tentacles
-      Name: Location
-      Roll: d6t
-      Results:
-        - face
-        - replacement arms
-        - replacement arms
-        - replacement legs
-        - back
-        - tail
+name: Tentacles
+show_name: true
+options:
+  - name: Location
+    show_name: false
+    roll: d6t
+    results:
+      - on the face
+      - as replacement arms
+      - as replacement arms
+      - as replacement legs
+      - on the back
+      - as tail
+---
+name: Gibbering mouth
+options:
+  - name: Gibbering mouth
+    show_name: false
+    roll: 2d12t
+    options:
+      - name: Ability
+        show_name: false
+        roll: 1d3t
+        options:
+          - name: Ability
+            show_name: false
+            roll: 1d8t
+            duplicates: false
+            results:
+              - vertigo-inducing gibberish
+              - drools acid
+              - vomits bile
+              - speaks with a dead relative's voice
+              - belches smoke
+              - Gregorian chanting
+              - puckers and licks its lips
+              - constant laughter and chuckling
