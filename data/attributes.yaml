@@ -1,0 +1,13 @@
+---
+Attributes:
+  - 1:
+      Type: Tentacles
+      Name: Location
+      Roll: d6t
+      Results:
+        - face
+        - replacement arms
+        - replacement arms
+        - replacement legs
+        - back
+        - tail
