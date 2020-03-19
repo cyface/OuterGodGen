@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    Your new outer god:
+    <ul>
+        <li>Name: {{ og.name }}</li>
+        <li>Appearance: {{ og.appearance }}</li>
+        <li>Attributes: {{ og.attributes }}</li>
+        <li>Gifts: {{ og.gifts }}</li>
+    </ul>
+{% endblock %}

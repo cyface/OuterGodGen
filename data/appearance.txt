@@ -1,0 +1,20 @@
+Amphibious
+Avian
+Cephalopod
+Crystalline
+Fungal
+Humanoid
+Insectoid
+Lava or Fire
+Liquid
+Mammalian
+Mass of darkness
+Mass of light
+Metallic
+Mist or Vapor
+Protoplasm
+Reptilian
+Shadow
+Sludge
+Snow or Ice
+Stone
