@@ -33,8 +33,9 @@ options:
 name: Compound eye
 show_name: true
 roll: 1d8t
+once: true
 options:
-  - name: eye
+  - name: type
     roll: 1d2t
     results:
       - multifaceted

@@ -18,6 +18,8 @@ def process_option(option):
 
         if option.get("options"):
             results = []
+            if option.get("once", False):
+                roll = 1
             for i in range(0, roll):
                 for sub_option in option.get("options"):
                     result = process_option(sub_option)
