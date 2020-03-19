@@ -5,31 +5,36 @@ import inflect
 p = inflect.engine()
 
 
-def process_option(option, leading_space=""):
-    # print(option["name"])
+def process_option(option):
+    option_result_text = ""
     if option.get("roll"):
         roll = dice.roll(option["roll"])
         if option.get("results"):
-            name = option.get('name') if option.get("show_name") else ""
-            print(f"{leading_space}{name} {option['results'][roll - 1]}")
+            name = option.get('name') + " " if option.get("show_name") else ""
+            option_result_text = f"{name}{option['results'][roll - 1]}"
         else:
-            print(f"{leading_space}{roll} {p.plural(option['name'], roll)}: ")
+            if option.get("show_name"):
+                option_result_text = f"{roll} {p.plural(option['name'], roll)}: "
 
         if option.get("options"):
+            results = []
             for i in range(0, roll):
                 for sub_option in option.get("options"):
-                    new_space = leading_space + "  "
-                    process_option(sub_option, new_space)
-    return
+                    result = process_option(sub_option)
+                    if not sub_option.get("duplicates", False) and result in results:
+                        i += 1  # Try again if you got a duplicate and duplicates are not allowed
+                    else:
+                        if sub_option.get("number_results", False):
+                            result = f"#{i+1}: {result}"
+                        results.append(result)
+            option_result_text += ", ".join(results).strip(',')
+    return option_result_text
 
 
 with open("data/attributes.yaml", 'r') as f:
     all_data = yaml.full_load_all(f)
     for data in all_data:
-        if data.get("options"):
-            for each_option in data.get("options"):
-                name = data.get('name') if data.get("show_name") else ""
-                print(name,)
-                process_option(each_option)
+        option_result = process_option(data)
+        print(option_result)
 
 

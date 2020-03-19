@@ -1,38 +1,41 @@
 ---
 name: Tentacles
 show_name: true
-options:
-  - name: Location
-    show_name: false
-    roll: d6t
-    results:
-      - on the face
-      - as replacement arms
-      - as replacement arms
-      - as replacement legs
-      - on the back
-      - as tail
+roll: d6t
+results:
+  - on the face
+  - as replacement arms
+  - as replacement arms
+  - as replacement legs
+  - on the back
+  - as tail
 ---
 name: Gibbering mouth
+roll: 2d12t
 options:
-  - name: Gibbering mouth
-    show_name: false
-    roll: 2d12t
+  - name: ability
+    number_results: true
+    roll: 1d3t
     options:
-      - name: Ability
-        show_name: false
-        roll: 1d3t
-        options:
-          - name: Ability
-            show_name: false
-            roll: 1d8t
-            duplicates: false
-            results:
-              - vertigo-inducing gibberish
-              - drools acid
-              - vomits bile
-              - speaks with a dead relative's voice
-              - belches smoke
-              - Gregorian chanting
-              - puckers and licks its lips
-              - constant laughter and chuckling
+      - name: ability
+        roll: 1d8t
+        duplicates: false
+        results:
+          - vertigo-inducing gibberish
+          - drools acid
+          - vomits bile
+          - speaks with a dead relative's voice
+          - belches smoke
+          - Gregorian chanting
+          - puckers and licks its lips
+          - constant laughter and chuckling
+---
+name: Compound eye
+show_name: true
+roll: 1d8t
+options:
+  - name: eye
+    roll: 1d2t
+    results:
+      - multifaceted
+      - clustered group
